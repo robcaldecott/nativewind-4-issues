@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import ErrorIcon from "./assets/error.svg";
 import { cssInterop } from "nativewind";
 import "./globals.css";
@@ -10,6 +10,17 @@ cssInterop(ErrorIcon, {
     nativeStyleToProp: { width: true, height: true, fill: true },
   },
 });
+
+function Foo(props: { icon: React.ElementType }) {
+  const Icon = props.icon;
+
+  return (
+    <View className="gap-2 flex-row items-center">
+      <Icon className="h-16 w-16 fill-red-500" />
+      <Text>Label</Text>
+    </View>
+  );
+}
 
 export default function App() {
   return (
@@ -22,6 +33,9 @@ export default function App() {
 
       {/* Fill does not work */}
       <ErrorIcon className="h-16 w-16 fill-red-500" />
+
+      {/* Fill does not work with icon as an element prop */}
+      <Foo icon={ErrorIcon} />
     </View>
   );
 }
