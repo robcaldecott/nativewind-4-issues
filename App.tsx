@@ -24,7 +24,7 @@ function Foo(props: { icon: React.ElementType }) {
 
 export default function App() {
   return (
-    <View className="flex-1 bg-white items-center justify-center gap-8">
+    <View className="flex-1 bg-white items-center justify-center gap-8 p-6">
       {/* Works */}
       <ErrorIcon style={{ height: 64, width: 64, fill: "red" }} />
 
