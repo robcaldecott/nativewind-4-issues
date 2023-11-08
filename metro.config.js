@@ -17,5 +17,5 @@ config.resolver = {
 
 module.exports = withNativeWind(config, {
   input: "./globals.css",
-  inlineNativeRem: false,
+  inlineRem: 16,
 });
